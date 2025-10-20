@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        html{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /* background-color: black; */
+        }
+
+        .time{
+            font-size: 5.5rem;
+            color: blue;
+            filter: drop-shadow(3px 3px 3px blue);
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div>
+        <div class="time">This is Time</div>
+    </div>
+
+    <script>
+        const time = document.querySelector('.time');
+
+        let curTime = () => {
+            let liveTime = new Date().toLocaleTimeString();
+            time.innerText = liveTime;
+        }
+        setInterval(() => {
+            curTime()
+        } , 1000)
+    </script>
+</body>
+</html>
