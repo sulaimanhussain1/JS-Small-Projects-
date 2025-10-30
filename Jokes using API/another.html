@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokes Website</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container{
+            width: 60%;
+            min-height: 10rem;
+            text-align: center;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 2px 2px 8px 8px white;
+        }
+        h1{
+            margin-top: 1rem;
+        }
+        section{
+            margin-top: 1rem;
+            color: #333;
+            padding: 0 1rem;
+           
+        }
+        button{
+            margin: 1rem 0;
+            padding: 10px 15px;
+            border-radius: 10rem;
+            background-color: blue;
+            color: white;
+            outline: none;
+            border: none;
+            transition: all 0.2s linear;
+
+            &:hover{
+                background-color: transparent;
+                color: black;
+                border: 1px solid black;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Welcome To Dad Jokes!!</h1>
+        <section class="api_body"></section>
+        <button id="fetchJoke">Get Another</button>
+    </div>
+
+    <script>
+        const apiBody = document.querySelector(".api_body");
+        const apiUrl = "https://icanhazdadjoke.com/";   // API URL
+        const fetchData = () => {
+            fetch(apiUrl, {
+                headers: {
+                    "Accept": "application/json"
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                apiBody.innerHTML = `${data.joke} 😂🤣`;
+            })
+            .catch((error) => {
+                console.log(error)
+                apiBody.innerHTML = 'Api is not working';
+            });
+        }
+
+        fetchData()
+        document.getElementById("fetchJoke").addEventListener("click", fetchData);
+
+
+    </script>
+</body>
+</html>
