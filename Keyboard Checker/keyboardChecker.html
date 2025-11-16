@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task1</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html , body{
+            width: 100%;
+            height: 100%;
+        }
+
+        #main{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            background-color: #0f0f0f;
+        }
+
+        h1{
+            color: #777;
+            font-size: 12rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>Typing...</h1>
+    </div>
+
+    <script>
+        let heading = document.querySelector("h1");
+        window.addEventListener('keydown' , function(e){
+            if(e.key === " "){
+                heading.textContent = 'SPC';
+            }else
+            heading.textContent = e.key
+        })
+    </script>
+</body>
+</html>
