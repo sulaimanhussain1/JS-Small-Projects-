@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task2</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        background-color: #0f0f0f;
+      }
+
+      #main {
+        width: 100%;
+        height: 100%;
+
+        color: white;
+      }
+      .divv {
+        position: absolute;
+        transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+        width: 80px;
+        height: 80px;
+        background-color: rgb(2, 58, 39);
+        margin: 10px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div class="divv">Sulaiman</div>
+    </div>
+
+    <script>
+      let main = document.querySelector("#main");
+      let div = document.querySelector(".divv");
+      main.addEventListener("mousemove", function (e) {
+        div.style.top = e.clientY + "px";
+        div.style.left = e.clientX + "px";
+      });
+    </script>
+  </body>
+</html>
