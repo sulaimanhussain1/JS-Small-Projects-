@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task5</title>
+    <style>
+        body{
+            font-size: 22px;
+            font-weight: 700;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            line-height: 2rem;
+        }
+
+        ul{
+            cursor: pointer;
+        }
+
+        .cutting{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <div class="Todo">
+        <h1>Click What You Did...??</h1>
+        <ul>
+            <li>Namaz Parhna</li>
+            <li>2 ghante coding</li>
+            <li>University Assignment</li>
+            <li>1 ghanta dosto me</li>
+            <li>1 ghanta reels ya movie</li>
+        </ul>
+    </div>
+    
+
+    <script>
+        let ul =  document.querySelector('ul');
+        // let li = document.querySelectorAll('li')
+       ul.addEventListener('click' , function(e){
+          e.target.classList.toggle('cutting');  
+        })
+    </script>
+</body>
+</html>
