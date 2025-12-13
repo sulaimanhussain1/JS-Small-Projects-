@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: rgb(22, 22, 22);
+            font-family: cursive;
+        }
+
+        .container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            min-height: 250px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 10px 0  rgb(206, 175, 175);
+        }
+
+        h1{
+            text-align: center;
+            font-size: 64px;
+            margin-top: 30px;
+        }
+
+        input{
+            padding: 5px 10px;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid black;
+        }
+
+        button{
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: rgb(22, 22, 22);
+            color: white;
+            &:hover{
+                background-color: rgb(45, 45, 45);
+                transition: background-color 0.3s ease;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <input type="number" placeholder="Enter Number For Counter" id="num">
+        <button id="btn">Start</button>
+        <h1 id="counter">0</h1>
+    </div>
+
+    <script>
+        let btn = document.querySelector('#btn');
+        let counter = document.querySelector('#counter');
+        let inp = document.querySelector('#num');
+
+        btn.addEventListener('click', function(){
+            let count = parseInt(inp.value);
+            let interval = setInterval(function(){
+                if(count >= 0){
+                    counter.innerText = count;
+                    count--;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 1000
+            );
+        });
+
+
+    </script>
+</body>
+</html>
