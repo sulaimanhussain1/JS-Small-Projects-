@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #00c6ff, #7b2ff7);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+.app-container {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  width: 450px;
+  color: white;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+textarea, input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  margin-bottom: 15px;
+  font-size: 14px;
+  resize: none;
+}
+
+input {
+  height: 40px;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  color: white;
+}
+
+#encryptBtn { background: #20c997; }   /* Teal */
+#decryptBtn { background: #ff5e99; }   /* Pink */
+
+#encryptBtn:hover { background: #17a589; }
+#decryptBtn:hover { background: #e05588; }
+
+#outputBox {
+  margin-top: 15px;
+  text-align: left;
+}
+
+#output {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  resize: none;
+  background: #f8f9fa;
+  color: #333;
+}
