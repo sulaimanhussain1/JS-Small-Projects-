@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.app-container {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  width: 400px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  color: white;
+}
+
+#encryptBtn {
+  background: #28a745;
+}
+#encryptBtn:hover {
+  background: #218838;
+}
+
+#decryptBtn {
+  background: #007bff;
+}
+#decryptBtn:hover {
+  background: #0069d9;
+}
+
+#copyBtn {
+  background: #ff9800;
+}
+#copyBtn:hover {
+  background: #e68900;
+}
+
+#outputBox {
+  margin-top: 15px;
+  text-align: left;
+}
+
+#outputBox h3 {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 14px;
+}
