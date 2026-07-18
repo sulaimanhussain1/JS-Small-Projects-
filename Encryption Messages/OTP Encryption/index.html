@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OTP Cipher (Binary Key)</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <h2>🔐 One-Time Pad Cipher</h2>
+
+      <textarea id="userInput" placeholder="Enter your message..."></textarea>
+
+      <div class="btn-group">
+        <button id="encryptBtn">Encrypt 🔒</button>
+        <button id="decryptBtn">Decrypt 🔑</button>
+        <button id="copyBtn">Copy 📋</button>
+      </div>
+
+      <div id="outputBox">
+        <h3>Key 🗝:</h3>
+        <textarea id="keyOutput" readonly></textarea>
+        <p class="note">
+          ⚠️ Key is very important for decryption . Please save this.
+        </p>
+
+        <h3 id="result">Result :</h3>
+        <textarea id="output" placeholder="Created By Sulaiman Hussain"></textarea>
+      </div>
+    </div>
+
+    <script src="otp.js"></script>
+  </body>
+</html>
