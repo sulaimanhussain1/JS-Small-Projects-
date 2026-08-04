@@ -1,134 +1,139 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task3</title>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:
+          "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
 
-        #form{
-            border: 1px solid black;
-            margin: 20px;
-        }
+      #form {
+        border: 1px solid black;
+        margin: 20px;
+      }
 
-        .main{
-            display: flex;
-            text-align: center;
-            justify-content: start;
-            margin: 20px;
-        }
+      .main {
+        display: flex;
+        text-align: center;
+        justify-content: start;
+        margin: 20px;
+      }
 
-        .card{
-            display: flex;
-            align-items: end;
-            justify-content: space-between;
-            flex-direction: row-reverse;
-            width: 550px;
-            height: 250px;
-            border: 1px solid red;
-        }
+      .card {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        width: 550px;
+        height: 250px;
+        border: 2px solid blue;
+      }
 
-        .card .profile-pic{
-            width: 40%;
-            height: 100%;
-            align-content: center;
-            /* background-color: red; */
-        }
+      .card .profile-pic {
+        width: 40%;
+        height: 100%;
+        align-content: center;
+        /* background-color: red; */
+      }
 
-        .card .profile-pic img{
-            width: 150px;
-            height: 150px;
-            /* background-color: aquamarine; */
-            object-fit: cover;
-        }
+      .card .profile-pic img {
+        width: 150px;
+        height: 150px;
+        /* background-color: aquamarine; */
+        object-fit: cover;
+      }
 
-        .card .data{
-            width: 80%;
-            height: 100%;
-            text-align: left;
-            padding: 10px;
-            line-height: 2rem;
-            align-content: center;
-        }
-
-
-
+      .card .data {
+        width: 80%;
+        height: 100%;
+        text-align: left;
+        padding: 10px;
+        line-height: 2rem;
+        align-content: center;
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <div id="form">
-        <form action="">
-            <input type="text" placeholder="Enter Your Name"><br><br>
-            <input type="text" placeholder="Enter Your Roll Number"><br><br>
-            <input type="number" placeholder="Enter Your Age"><br><br>
-            <input type="email" placeholder="Enter Your Email"><br><br>
-            <label for="gender">Gender : </label>
-            <input type="radio" name="gender" id="gender">Male
-            <input type="radio" name="gender" id="gender">Female <br><br>
-            <label for="city">City : </label>
-            <select name="city" id="city">
-                <option selected disabled>Select Your City</option>
-                <option value="karachi">Karachi</option>
-                <option value="lahore">Lahore</option>
-                <option value="rawalpindi">Rawalpindi</option>
-                <option value="hyderabad">Hyderabad</option>
-            </select><br><br>
-            <input type="submit">
-        </form>
+      <form action="">
+        <input type="text" placeholder="Enter Your Name" /><br /><br />
+        <input type="text" placeholder="Enter Your Roll Number" /><br /><br />
+        <input type="number" placeholder="Enter Your Age" /><br /><br />
+        <input type="email" placeholder="Enter Your Email" /><br /><br />
+        <label for="gender">Gender : </label>
+        <input type="radio" name="gender" id="gender" />Male
+        <input type="radio" name="gender" id="gender" />Female <br /><br />
+        <label for="city">City : </label>
+        <select name="city" id="city">
+          <option selected disabled>Select Your City</option>
+          <option value="karachi">Karachi</option>
+          <option value="lahore">Lahore</option>
+          <option value="rawalpindi">Rawalpindi</option>
+          <option value="hyderabad">Hyderabad</option>
+        </select><br><br>
+        <input type="file" name="" id="">
+          <br /><br />
+        <input type="submit" />
+      </form>
     </div>
 
     <script>
-        
-        let form = document.querySelector('form');
-        let inputs = document.querySelectorAll('input');
+      let form = document.querySelector("form");
+      let inputs = document.querySelectorAll("input");
 
-        form.addEventListener('submit' , function(e){
-            e.preventDefault();
-            console.log(e)
-            
-            let div = document.createElement("div");
-            div.classList.add("main");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        console.log(e);
 
-            let card = document.createElement('div');
-            card.classList.add("card");
+        let div = document.createElement("div");
+        div.classList.add("main");
 
-            let profile = document.createElement('div');
-            profile.classList.add('profile-pic')
+        let card = document.createElement("div");
+        card.classList.add("card");
 
-            let img = document.createElement('img');
-            img.setAttribute('src' , './77a3d662-c81d-48e5-a94e-af6f030a416e.jpg');
-            img.setAttribute('alt' , 'User Profile Picture');
+        let profile = document.createElement("div");
+        profile.classList.add("profile-pic");
 
-            let data = document.createElement('div');
-            data.classList.add('data');
+        let img = document.createElement("img");
+        img.setAttribute("src", `${inputs[6].files[0] ? URL.createObjectURL(inputs[6].files[0]) : "https://via.placeholder.com/150"}`);
+        img.setAttribute("alt", "User Profile Picture");
 
-            let name = document.createElement('h4');
-            name.innerText = `Name : ${inputs[0].value}`;
-            let roll = document.createElement('h4');
-            roll.innerText = `Roll No : ${inputs[1].value}`;
-            let age = document.createElement('h4');
-            age.innerText = `Age : ${inputs[2].value}`;
-            let batch = document.createElement('h4');
-            batch.innerText = `Batch : ${inputs[3].value}`;
+        let data = document.createElement("div");
+        data.classList.add("data");
 
-            profile.appendChild(img);
-            data.appendChild(name);
-            data.appendChild(roll);
-            data.appendChild(age);
-            data.appendChild(batch);
-            card.appendChild(profile);
-            card.appendChild(data);
-            div.appendChild(card);
-            document.body.appendChild(div);
-            form.reset();
-        })
+        let name = document.createElement("h4");
+        name.innerText = `Name : ${inputs[0].value}`;
+        let roll = document.createElement("h4");
+        roll.innerText = `Roll No : ${inputs[1].value}`;
+        let age = document.createElement("h4");
+        age.innerText = `Age : ${inputs[2].value}`;
+        let email = document.createElement("h4");
+        email.innerText = `Email : ${inputs[3].value}`;
+        let gender = document.createElement('h4');
+        gender.innerText = `Gender : ${inputs[4].checked ? 'Male' : 'Female'}`;
+        let city = document.createElement('h4');
+        city.innerText = `City : ${inputs[5].value}` 
+
+        profile.appendChild(img);
+        data.appendChild(name);
+        data.appendChild(roll);
+        data.appendChild(age);
+        data.appendChild(email);
+        data.appendChild(gender);
+        data.appendChild(city);
+        card.appendChild(profile);
+        card.appendChild(data);
+        div.appendChild(card);
+        document.body.appendChild(div);
+        form.reset();
+      });
     </script>
-</body>
+  </body>
 </html>
